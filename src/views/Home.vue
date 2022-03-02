@@ -194,6 +194,11 @@ export default {
     },
     restorePlanFromUrl() {
       const path = window.location.hash;
+
+      if (path === '#/') {
+        this.semesters = [];
+      }
+
       if (path.startsWith('#/plan/')) {
         this.semesters = path
           .slice(7)
