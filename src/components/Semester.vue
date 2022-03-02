@@ -10,7 +10,11 @@
     @drop="onDrop"
     @should-accept-drop="() => true"
     group-name="semester"
-    :get-child-payload="getChildPayload">
+    :get-child-payload="getChildPayload"
+    drag-handle-selector=".module"
+    non-drag-area-selector=".delete-button"
+    :animation-duration=100
+    :fire-related-events-only=true>
     <Module
       v-for="module in modules"
       @on-delete="$emit('on-module-deleted', $event)"
